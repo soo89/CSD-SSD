@@ -7,6 +7,10 @@ By [Jisoo Jeong](http://mipal.snu.ac.kr/index.php/Jisoo_Jeong), [Seungeui Lee](h
 ## Installation & Preparation
 We experimented with CSD using the SSD pytorch framework. To use our model, complete the installation & preparation on the [SSD pytorch homepage](https://github.com/amdegroot/ssd.pytorch)
 
+#### prerequisites
+- Python 3.6
+- Pytorch 1.0.0
+
 ## Supervised learning
 ```Shell
 python train_ssd.py
