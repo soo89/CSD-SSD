@@ -1,6 +1,6 @@
 # CSD: Consistency-based Semi-supervised learning for object Detection
 
-By [Jisoo Jeong](http://mipal.snu.ac.kr/index.php/Jisoo_Jeong), [Seungeui Lee](http://mipal.snu.ac.kr/index.php/Seungeui_Lee), [Jee-soo Kim](http://mipal.snu.ac.kr/index.php/Jee-soo_Kim), [Nojun Kwak](http://mipal.snu.ac.kr/index.php/Nojun_Kwak)
+By [Jisoo Jeong](http://mipal.snu.ac.kr/index.php/Jisoo_Jeong), [Seungeui Lee], [Jee-soo Kim](http://mipal.snu.ac.kr/index.php/Jee-soo_Kim), [Nojun Kwak](http://mipal.snu.ac.kr/index.php/Nojun_Kwak)
 
 
 
