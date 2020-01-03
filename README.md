@@ -1,4 +1,4 @@
-# CSD: Consistency-based Semi-supervised learning for object Detection [paper](https://papers.nips.cc/paper/9259-consistency-based-semi-supervised-learning-for-object-detection)
+# [CSD: Consistency-based Semi-supervised learning for object Detection](https://papers.nips.cc/paper/9259-consistency-based-semi-supervised-learning-for-object-detection)
 
 By [Jisoo Jeong](http://mipal.snu.ac.kr/index.php/Jisoo_Jeong), Seungeui Lee, [Jee-soo Kim](http://mipal.snu.ac.kr/index.php/Jee-soo_Kim), [Nojun Kwak](http://mipal.snu.ac.kr/index.php/Nojun_Kwak)
 
