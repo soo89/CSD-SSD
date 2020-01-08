@@ -94,7 +94,7 @@ class VOCDetection_con(data.Dataset):
             (default: 'VOC2007')
     """
     # image_sets=[('2007', 'trainval'), ('2012', 'trainval')],
-    # image_sets = [('2007', 'trainval'), ('2014','only_voc')],
+    # image_sets = [('2007', 'trainval'), ('2014','ONLY_VOC_IN_COCO')],
     # image_sets = [('2012', 'trainval'), ('2014', 'COCO')],
 
     def __init__(self, root,
