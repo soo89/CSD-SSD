@@ -94,7 +94,7 @@ class VOCDetection_con(data.Dataset):
             (default: 'VOC2007')
     """
     # image_sets=[('2007', 'trainval'), ('2012', 'trainval')],
-    # image_sets = [('2007', 'trainval'), ('2014','ONLY_VOC_IN_COCO')],
+    # image_sets = [('2007', 'trainval'), ('2014','only_voc')],
     # image_sets = [('2012', 'trainval'), ('2014', 'COCO')],
 
     def __init__(self, root,
@@ -102,7 +102,7 @@ class VOCDetection_con(data.Dataset):
                  transform=None, target_transform=VOCAnnotationTransform_con(),
                  dataset_name='VOC0712'):
         self.root = root
-        self.coco_root = '/home/soo/data/COCO'
+        self.coco_root = '/ssd/Dataset/COCO/images'
         self.image_set = image_sets
         self.transform = transform
         self.target_transform = target_transform
@@ -110,15 +110,27 @@ class VOCDetection_con(data.Dataset):
         self._annopath = osp.join('%s', 'Annotations', '%s.xml')
         self._imgpath = osp.join('%s', 'JPEGImages', '%s.jpg')
         self.ids = list()
+        self.unlabel_ids = list()
         for (year, name) in image_sets:
-            if(name=='trainval'):
-                rootpath = osp.join(self.root, 'VOC' + year)
-                for line in open(osp.join(rootpath, 'ImageSets', 'Main', name + '.txt')):
-                    self.ids.append((rootpath, line.strip()))
+            if(year=='2007'):
+                if(name=='trainval'):
+                    rootpath = osp.join(self.root, 'VOC' + year)
+                    for line in open(osp.join(rootpath, 'ImageSets', 'Main', name + '.txt')):
+                        self.ids.append((rootpath, line.strip()))
             else:
-                rootpath = osp.join(self.coco_root)
-                for line in open(osp.join(rootpath, name + '.txt')):
-                    self.ids.append((rootpath, line.strip()))
+                if(name=='trainval'):
+                    rootpath = osp.join(self.root, 'VOC' + year)
+                    for line in open(osp.join(rootpath, 'ImageSets', 'Main', name + '.txt')):
+                        self.unlabel_ids.append((rootpath, line.strip()))
+                        #self.ids.append((rootpath, line.strip()))
+                else:
+                    rootpath = osp.join(self.coco_root)
+                    for line in open(osp.join(rootpath, name + '.txt')):
+                        self.unlabel_ids.append((rootpath, line.strip()))
+
+        self.unlabel_ids = random.sample(self.unlabel_ids, 11540)
+        self.ids = self.ids + self.unlabel_ids
+
 
 
     def __getitem__(self, index):
