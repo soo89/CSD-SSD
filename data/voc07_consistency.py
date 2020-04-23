@@ -12,6 +12,8 @@ import torch
 import torch.utils.data as data
 import cv2
 import numpy as np
+import random
+
 if sys.version_info[0] == 2:
     import xml.etree.cElementTree as ET
 else:
